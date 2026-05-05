@@ -11,7 +11,7 @@ const BONDING_CURVE_ABI = [
 
 // Alamat kontrak Mint Club V2 di Base (perlu konfirmasi)
 // Untuk contoh kita gunakan address placeholder, user HARUS mengganti dengan address resmi
-const MINT_CLUB_V2_ADDRESS = "0x..."; // TODO: ganti dengan address resmi dari chef universe docs
+const MINT_CLUB_V2_ADDRESS = "0xda5d0Db1c397A8d64D92244a44BE47a44E6B965C"; // TODO: ganti dengan address resmi dari chef universe docs
 
 const provider = new ethers.JsonRpcProvider(process.env.RPC_URL || "https://mainnet.base.org");
 const wallet = new ethers.Wallet(process.env.WALLET_PRIVATE_KEY!, provider);
