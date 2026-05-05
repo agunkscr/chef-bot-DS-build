@@ -1,1 +1,10 @@
+# Environment variables (jangan di-commit)
+.env
 
+# Dependensi
+node_modules/
+
+# File state yang mungkin berisi data privat
+state.json
+backups/
+trade_log.json
