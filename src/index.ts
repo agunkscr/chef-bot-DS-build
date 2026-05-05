@@ -6,7 +6,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const PORT = Number(process.env.PORT) || 3000;
-const INTERVAL_MS = 5 * 60 * 1000;
+const INTERVAL_MS = Number(process.env.CHECK_INTERVAL_MS) || 5 * 60 * 1000;
 
 // ─── Server HTTP minimal untuk Railway health check ──────
 const server = createServer((req, res) => {
