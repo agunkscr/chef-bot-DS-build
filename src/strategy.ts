@@ -74,19 +74,19 @@ export async function findOpportunities(config?: Config): Promise<{ token: Ingre
   }
 
   // Filter kandidat
-  const candidates = ingredients.filter(async (ing) => {
-    const ingSigs = ing.signals;
-    const hasReq = cfg.signalsRequired.every(s => ingSigs.includes(s));
-    const hasForbid = cfg.signalsForbidden.some(s => ingSigs.includes(s));
-    if (!hasReq || hasForbid) return false;
-    const vol = parseFloat(ing.volume_24h_chef);
-    if (vol < cfg.minVolume24h) return false;
-    const grade = ing.grade || 1;
-    if (grade < cfg.minGrade) return false;
-    const slippage = ing.slippage_buy_10k ?? 0;
-    if (slippage > cfg.maxSlippageBps) return false;
-    return true;
-  });
+  const candidates = ingredients.filter((ing) => {
+  const ingSigs = ing.signals as string[];
+  const hasReq = cfg.signalsRequired.every(s => ingSigs.includes(s));
+  const hasForbid = cfg.signalsForbidden.some(s => ingSigs.includes(s));
+  if (!hasReq || hasForbid) return false;
+  const vol = parseFloat(ing.volume_24h_chef);
+  if (vol < cfg.minVolume24h) return false;
+  const grade = ing.grade || 1;
+  if (grade < cfg.minGrade) return false;
+  const slippage = ing.slippage_buy_10k ?? 0;
+  if (slippage > cfg.maxSlippageBps) return false;
+  return true;
+});
 
   // Tambahkan bonus sinyal curve & Marco Polo
   const enriched = await Promise.all(candidates.map(async (c) => {
