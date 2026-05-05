@@ -45,7 +45,7 @@ function isValidAddress(addr: string): boolean {
 
 function normalizeIngredient(raw: any): Ingredient | null {
   // Ambil alamat token – mungkin bernama `id`, `token_address`, `contract_address`, dsb.
-  const id = raw.id || raw.token_address || raw.contract_address || raw.token || "";
+  const id = raw.id || raw.address || raw.token_address || raw.contract_address || raw.token || "";
   if (!isValidAddress(id)) {
     console.warn(`Data ingredient tidak memiliki alamat valid:`, raw);
     return null; // skip
