@@ -75,7 +75,7 @@ export async function findOpportunities(config?: Config): Promise<{ token: Ingre
 
   // Filter kandidat
   const candidates = ingredients.filter(async (ing) => {
-    const ingSigs = ing.signals as string[];
+    const ingSigs = ing.signals;
     const hasReq = cfg.signalsRequired.every(s => ingSigs.includes(s));
     const hasForbid = cfg.signalsForbidden.some(s => ingSigs.includes(s));
     if (!hasReq || hasForbid) return false;
