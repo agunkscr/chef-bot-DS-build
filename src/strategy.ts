@@ -40,7 +40,7 @@ export async function findConservativeBuy(): Promise<{
   // Dapatkan saldo $CHEF dompet
   const provider = new (require("ethers").JsonRpcProvider)(process.env.RPC_URL);
   const wallet = new (require("ethers").Wallet)(process.env.WALLET_PRIVATE_KEY!, provider);
-  const chefTokenAddress = "0x..."; // TODO: address $CHEF di Base
+  const chefTokenAddress = "0xc4a09803e2e1a491cb3119b891dcf890e3c98b07"; // TODO: address $CHEF di Base
   const chefContract = new (require("ethers").Contract)(chefTokenAddress, ["function balanceOf(address) view returns (uint256)"], wallet);
   const saldoWei = await chefContract.balanceOf(wallet.address);
   const saldoCHEF = parseFloat(require("ethers").formatEther(saldoWei));
