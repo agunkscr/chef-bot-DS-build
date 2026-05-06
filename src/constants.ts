@@ -2,7 +2,7 @@
 
 // ─── Contract Addresses (Base Mainnet) ──────────────────────
 export const MCV2_BOND_ADDRESS = "0xc5a076cad94176c2996B32d8466Be1cE757FAa27";
-export const CHEF_TOKEN_ADDRESS = "0x3692043871d5F1d4Ed89EB8aeb0D1227593cfC40";
+export const CHEF_TOKEN_ADDRESS = "0xc4a09803e2e1a491cb3119b891dcf890e3c98b07";
 export const MULTICALL3_ADDRESS = "0xcA11bde05977b3631167028862bE2a173976CA11";
 
 // Marco Polo Farcaster handle — dipantau lewat Warpcast API
