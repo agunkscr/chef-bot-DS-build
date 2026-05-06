@@ -81,7 +81,7 @@ function normalizeIngredient(raw: any): Ingredient | null {
 
   return {
     id,
-    symbol: raw.symbol || "UNKNOWN",
+    symbol: raw.ticker || raw.symbol || "UNKNOWN",
     current_price_chef,
     price_usd: raw.price_usd || null,
     volume_24h_chef,
