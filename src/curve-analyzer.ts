@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+.import { ethers } from "ethers";
 import { MCV2_BOND_ADDRESS, BOND_ABI } from "./constants";
 import * as dotenv from "dotenv";
 dotenv.config();
